@@ -1,0 +1,1 @@
+/usr/bin/cc  -std=c++11 -g  -rdynamic CMakeFiles/naive.dir/main.c.o  -o naive 

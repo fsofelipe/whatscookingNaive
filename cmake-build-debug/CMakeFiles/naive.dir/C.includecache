@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/main.c
+stdio.h
+-
+main.h
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/main.h
+
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/main.h
+
