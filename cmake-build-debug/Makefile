@@ -123,6 +123,33 @@ naive/fast:
 	$(MAKE) -f CMakeFiles/naive.dir/build.make CMakeFiles/naive.dir/build
 .PHONY : naive/fast
 
+jsonParser.o: jsonParser.c.o
+
+.PHONY : jsonParser.o
+
+# target to build an object file
+jsonParser.c.o:
+	$(MAKE) -f CMakeFiles/naive.dir/build.make CMakeFiles/naive.dir/jsonParser.c.o
+.PHONY : jsonParser.c.o
+
+jsonParser.i: jsonParser.c.i
+
+.PHONY : jsonParser.i
+
+# target to preprocess a source file
+jsonParser.c.i:
+	$(MAKE) -f CMakeFiles/naive.dir/build.make CMakeFiles/naive.dir/jsonParser.c.i
+.PHONY : jsonParser.c.i
+
+jsonParser.s: jsonParser.c.s
+
+.PHONY : jsonParser.s
+
+# target to generate assembly for a file
+jsonParser.c.s:
+	$(MAKE) -f CMakeFiles/naive.dir/build.make CMakeFiles/naive.dir/jsonParser.c.s
+.PHONY : jsonParser.c.s
+
 main.o: main.c.o
 
 .PHONY : main.o
@@ -159,6 +186,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... naive"
+	@echo "... jsonParser.o"
+	@echo "... jsonParser.i"
+	@echo "... jsonParser.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -6,11 +6,25 @@
 
 #IncludeRegexTransform: 
 
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/jsonParser.c
+jsonParser.h
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/jsonParser.h
+
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/jsonParser.h
+json/json.h
+-
+stdio.h
+-
+
 /home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/main.c
 stdio.h
 -
 main.h
 /home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/main.h
+json/json.h
+-
+jsonParser.h
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/jsonParser.h
 
 /home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/main.h
 

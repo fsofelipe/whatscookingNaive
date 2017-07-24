@@ -1,1 +1,1 @@
-/usr/bin/cc  -std=c++11 -g  -rdynamic CMakeFiles/naive.dir/main.c.o  -o naive 
+/usr/bin/cc -l json -l json -g  -rdynamic CMakeFiles/naive.dir/main.c.o CMakeFiles/naive.dir/jsonParser.c.o  -o naive /lib/x86_64-linux-gnu/libjson.so.0 

@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/naive.dir/main.c.o"
+  "CMakeFiles/naive.dir/jsonParser.c.o"
   "naive.pdb"
   "naive"
 )
