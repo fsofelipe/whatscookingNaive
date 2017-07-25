@@ -2,11 +2,16 @@
 #define WHATSCOOKINGNAIVE_MAIN_H
 
 typedef struct recipe {
-    int id; //cuisine id
-    char* cuisine; //cuisine name
-    int counter; //cuisine counter
-    char** ingredients; //list of ingredients that are part of the cuisine
-    int *ingredientsFreq; //list of the frequency for each ingredient on the cuisine
-} Recipe;
+    char* ingredients; //ingredients that are part of the cuisine
+    int ingredientsFreq; //requency for each ingredient on the cuisine
+} recipe_t;
+
+typedef struct cuisine{
+  int id; //cuisine id
+  char* name; //cuisine name
+  int counter; //cuisine counter; how many times the cuisine appears on the dataset
+  recipe_t *ingredient; //list of ingredients for each recipe
+  int totalIngredients;
+} cuisine_t;
 
 #endif //WHATSCOOKINGNAIVE_MAIN_H
