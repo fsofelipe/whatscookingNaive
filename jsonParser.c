@@ -43,11 +43,11 @@ void json_parse_array( json_object *jobj, char *key, Recipe * recipe) {
     //printf("Array Length: %dn",arraylen);
     int i;
     json_object * jvalue;
-    recipe->ingredients = (char**) malloc(arraylen * sizeof(char *));
+    recipe->ingredients = (Ingredient*) malloc(arraylen * sizeof(Ingredient));
     recipe->number_ingredients = arraylen;
     //recipe->ingredients = malloc(arraylen);
     for (i=0; i< arraylen; i++){
-        recipe->ingredients[i] = (char *) malloc(recipe->ingredients[i]+1);
+        //recipe->ingredients[i] = (Ingredient *) malloc(sizeof(Ingredient));
         //recipe->ingredients[i] = malloc(20);
         jvalue = json_object_array_get_idx(jarray, i); /*Getting the array element at position i*/
         type = json_object_get_type(jvalue);
@@ -57,7 +57,7 @@ void json_parse_array( json_object *jobj, char *key, Recipe * recipe) {
         else if (type != json_type_object) {
             //printf("value[%d]: ",i);
             print_json_value(jvalue, recipe, 0);
-            recipe->ingredients[i] = json_object_get_string(jvalue);
+            recipe->ingredients[i].name = json_object_get_string(jvalue);
             //printf("Ingredient: %s\n", recipe->ingredients[i]);
 
         }

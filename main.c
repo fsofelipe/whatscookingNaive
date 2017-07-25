@@ -8,18 +8,22 @@
 #include <memory.h>
 #include "jsonParser.h"
 
-void print_recipe(Recipe *recipe){
-    printf("ID: %d, Cuisine: %s, Ingredients:\n", recipe->id, recipe->cuisine);
+void print_recipe(Recipe *recipe, int withCuisine){
+    if(withCuisine == 1){
+        printf("ID: %d, Cuisine: %s, Ingredients:\n", recipe->id, recipe->cuisine);
+    }else{
+        printf("ID: %d, Ingredients:\n", recipe->id);
+    }
 
     for(int z = 0; z < recipe->number_ingredients; z++){
-        printf("Ingredient: %s \n", recipe->ingredients[z]);
+        printf("Ingredient: %s \n", recipe->ingredients[z].name);
     }
     printf("\n");
 }
 
-void print_recipe_list(List_Of_Recipes *list){
+void print_recipe_list(List_Of_Recipes *list, int withCuisine){
     for(int i = 0; i < list->number; i++){
-        print_recipe(list->list[i]);
+        print_recipe(list->list[i], withCuisine);
     }
 }
 
@@ -136,5 +140,5 @@ List_Of_Recipes * read_file(int type){
 int main() {
     List_Of_Recipes * train = read_file(1);
     List_Of_Recipes * test = read_file(2);
-    print_recipe_list(train);
+    print_recipe_list(train, 1);
 }
