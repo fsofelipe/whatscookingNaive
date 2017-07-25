@@ -10,6 +10,7 @@ typedef struct recipe {
     int id;
     char* cuisine;
     char** ingredients;
+    int *ingredientsFreq;
 } Recipe;
 
 #endif //WHATSCOOKINGNAIVE_MAIN_H
