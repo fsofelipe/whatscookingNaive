@@ -8,7 +8,22 @@
 #include <memory.h>
 #include "jsonParser.h"
 
-void read_file(int type){
+void print_recipe(Recipe *recipe){
+    printf("ID: %d, Cuisine: %s, Ingredients:\n", recipe->id, recipe->cuisine);
+
+    for(int z = 0; z < recipe->number_ingredients; z++){
+        printf("Ingredient: %s \n", recipe->ingredients[z]);
+    }
+    printf("\n");
+}
+
+void print_recipe_list(List_Of_Recipes *list){
+    for(int i = 0; i < list->number; i++){
+        print_recipe(list->list[i]);
+    }
+}
+
+List_Of_Recipes * read_file(int type){
     //Type 1 = Train
     //Type 2 = Test
 
@@ -25,6 +40,11 @@ void read_file(int type){
     size_t len = 0;
     ssize_t read;
 
+    List_Of_Recipes * recipe_list = (List_Of_Recipes *) malloc(sizeof(List_Of_Recipes));
+    recipe_list->number = 0;
+
+    recipe_list->list = (Recipe *) malloc(sizeof(Recipe));
+
     if (file) {
         char *file_contents;
         long input_file_size;
@@ -38,38 +58,45 @@ void read_file(int type){
         int i = 0;
         int found_first_bracket = 0;
         char *object = malloc(1);
-        int size = 1;
+        int size = 0;
         for (i = 0; file_contents[i] != 0; i++){
             //printf("%c", file_contents[i]);
 
             if(file_contents[i] == '{'){
                // printf("FOUND FIRST");
-                found_first_bracket = 1;
+                found_first_bracket = i;
+                size = 0;
             }
 
-            if(found_first_bracket == 1){
-                char * willBeAdded = malloc(1);
-                char * hold = object;
-                object = (char*) malloc(size * sizeof(char));
-                object = hold;
+            if(found_first_bracket > 0){
+                size++;
+                //char * willBeAdded = malloc(1);
+                //char * hold = object;
+               // object = (char*) malloc(size * sizeof(char));
+                //object = hold;
                 //object[size] = 'a';
                 //printf("%d", sizeof(object));
-                strncat(willBeAdded, &file_contents[i], 1);
-                strcat(object, willBeAdded);
+                //strncat(willBeAdded, &file_contents[i], 1);
+               // strcat(object, willBeAdded);
                 //printf("%s\n", object);
-                size++;
+               // size++;
             }
 
             if(file_contents[i] == '}'){
-                printf("%s", object);
-                size = 1;
-                found_first_bracket = 0;
+                char object[size];
+                memcpy(object, &file_contents[found_first_bracket], size);
+                object[size] = '\0';
+                //printf("%s\n", object);
+
                 json_object * jobj = json_tokener_parse(object);
-                Recipe r;
-                json_parse(jobj, &r);
+                Recipe *r = (Recipe *) malloc(sizeof(Recipe));
+                json_parse(jobj, r);
                 //object = malloc(size);
-                printf("LALALAL %d", r.id);
-               // strcpy(object, "0");
+                //print_recipe(r);
+                recipe_list->list[recipe_list->number] = r;
+                recipe_list->number++;
+                recipe_list->list = realloc(recipe_list->list, recipe_list->number * sizeof(Recipe));
+                // strcpy(object, "0");
                 // SALVA NO OBJETO
             }
             // Pega objeto por objeto.
@@ -80,6 +107,7 @@ void read_file(int type){
         }
         //printf("%d", input_file_size);
         //printf("%s", file_contents);
+        return recipe_list;
     }
 
    /* char * string = "{\"id\": 3731,\n"
@@ -106,5 +134,7 @@ void read_file(int type){
 }
 
 int main() {
-    read_file(1);
+    List_Of_Recipes * train = read_file(1);
+    List_Of_Recipes * test = read_file(2);
+    print_recipe_list(train);
 }

@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include "main.h"
 
-void print_json_value(json_object *jobj, Recipe * recipe);
+void print_json_value(json_object *jobj, Recipe * recipe, int cuisine);
 void json_parse_array( json_object *jobj, char *key, Recipe * recipe);
 void json_parse(json_object * jobj, Recipe * recipe);
 #endif //WHATSCOOKINGNAIVE_JSONPARSER_H
