@@ -6,8 +6,9 @@
 #define WHATSCOOKINGNAIVE_JSONPARSER_H
 #include <json/json.h>
 #include <stdio.h>
+#include "main.h"
 
-void print_json_value(json_object *jobj);
-void json_parse_array( json_object *jobj, char *key);
-void json_parse(json_object * jobj);
+void print_json_value(json_object *jobj, Recipe * recipe);
+void json_parse_array( json_object *jobj, char *key, Recipe * recipe);
+void json_parse(json_object * jobj, Recipe * recipe);
 #endif //WHATSCOOKINGNAIVE_JSONPARSER_H

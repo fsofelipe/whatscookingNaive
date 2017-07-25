@@ -4,7 +4,7 @@
 #include "jsonParser.h"
 
 /*printing the value corresponding to boolean, double, integer and strings*/
-void print_json_value(json_object *jobj){
+void print_json_value(json_object *jobj, Recipe * recipe){
     enum json_type type;
     printf("type: ",type);
     type = json_object_get_type(jobj); /*Getting the type of the json object*/
@@ -16,7 +16,8 @@ void print_json_value(json_object *jobj){
             printf("          value: %lfn", json_object_get_double(jobj));
             break;
         case json_type_int: printf("json_type_intn");
-            printf("          value: %dn", json_object_get_int(jobj));
+            recipe->id = json_object_get_int(jobj);
+            //printf("          value: %dn", json_object_get_int(jobj));
             break;
         case json_type_string: printf("json_type_stringn");
             printf("          value: %sn", json_object_get_string(jobj));
@@ -25,8 +26,8 @@ void print_json_value(json_object *jobj){
 
 }
 
-void json_parse_array( json_object *jobj, char *key) {
-    void json_parse(json_object * jobj); /*Forward Declaration*/
+void json_parse_array( json_object *jobj, char *key, Recipe * recipe) {
+    void json_parse(json_object * jobj, Recipe * recipe); /*Forward Declaration*/
     enum json_type type;
 
     json_object *jarray = jobj; /*Simply get the array*/
@@ -38,25 +39,27 @@ void json_parse_array( json_object *jobj, char *key) {
     printf("Array Length: %dn",arraylen);
     int i;
     json_object * jvalue;
-
+    //recipe->ingredients = malloc(arraylen);
     for (i=0; i< arraylen; i++){
+        //recipe->ingredients[i] = malloc(20);
         jvalue = json_object_array_get_idx(jarray, i); /*Getting the array element at position i*/
         type = json_object_get_type(jvalue);
         if (type == json_type_array) {
-            json_parse_array(jvalue, NULL);
+            json_parse_array(jvalue, NULL, recipe);
         }
         else if (type != json_type_object) {
             printf("value[%d]: ",i);
-            print_json_value(jvalue);
+            print_json_value(jvalue, recipe);
         }
         else {
-            json_parse(jvalue);
+            json_parse(jvalue, recipe);
         }
     }
 }
 
 /*Parsing the json object*/
-void json_parse(json_object * jobj) {
+void json_parse(json_object * jobj, Recipe *recipe) {
+    recipe->id = 1;
     enum json_type type;
     json_object_object_foreach(jobj, key, val) { /*Passing through every array element*/
         printf("type: ",type);
@@ -65,14 +68,14 @@ void json_parse(json_object * jobj) {
             case json_type_boolean:
             case json_type_double:
             case json_type_int:
-            case json_type_string: print_json_value(val);
+            case json_type_string: print_json_value(val, recipe);
                 break;
             case json_type_object: printf("json_type_objectn");
                 jobj = json_object_object_get(jobj, key);
-                json_parse(jobj);
+                json_parse(jobj, recipe);
                 break;
             case json_type_array: printf("type: json_type_array, ");
-                json_parse_array(jobj, key);
+                json_parse_array(jobj, key, recipe);
                 break;
         }
     }

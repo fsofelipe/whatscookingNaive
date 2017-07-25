@@ -3,6 +3,7 @@
 
 CMakeFiles/naive.dir/jsonParser.c.o: ../jsonParser.c
 CMakeFiles/naive.dir/jsonParser.c.o: ../jsonParser.h
+CMakeFiles/naive.dir/jsonParser.c.o: ../main.h
 
 CMakeFiles/naive.dir/main.c.o: ../jsonParser.h
 CMakeFiles/naive.dir/main.c.o: ../main.c

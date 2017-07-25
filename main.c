@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include "main.h"
 #include <json/json.h>
+#include <memory.h>
 #include "jsonParser.h"
 
 void read_file(int type){
@@ -35,8 +36,42 @@ void read_file(int type){
         fclose(file);
 
         int i = 0;
+        int found_first_bracket = 0;
+        char *object = malloc(1);
+        int size = 1;
         for (i = 0; file_contents[i] != 0; i++){
-            printf("%c", file_contents[i]);
+            //printf("%c", file_contents[i]);
+
+            if(file_contents[i] == '{'){
+               // printf("FOUND FIRST");
+                found_first_bracket = 1;
+            }
+
+            if(found_first_bracket == 1){
+                char * willBeAdded = malloc(1);
+                char * hold = object;
+                object = (char*) malloc(size * sizeof(char));
+                object = hold;
+                //object[size] = 'a';
+                //printf("%d", sizeof(object));
+                strncat(willBeAdded, &file_contents[i], 1);
+                strcat(object, willBeAdded);
+                //printf("%s\n", object);
+                size++;
+            }
+
+            if(file_contents[i] == '}'){
+                printf("%s", object);
+                size = 1;
+                found_first_bracket = 0;
+                json_object * jobj = json_tokener_parse(object);
+                Recipe r;
+                json_parse(jobj, &r);
+                //object = malloc(size);
+                printf("LALALAL %d", r.id);
+               // strcpy(object, "0");
+                // SALVA NO OBJETO
+            }
             // Pega objeto por objeto.
 
             // Usar o json parse nele
