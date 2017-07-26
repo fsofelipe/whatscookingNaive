@@ -4,10 +4,12 @@
 
 #include "main.h"
 #include "recipe.h"
+#include "naive_bayes.h"
 
 int main() {
     List_Of_Recipes * train = read_file(1);
     List_Of_Recipes * test = read_file(2);
-    print_recipe_list(train, 1);
+
+    mount_tables(train);
 
 }

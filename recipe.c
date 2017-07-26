@@ -4,6 +4,7 @@
 
 #include <stdio.h>
 #include "recipe.h"
+#include "jsonParser.h"
 
 void print_recipe(Recipe *recipe, int withCuisine){
     if(withCuisine == 1){
@@ -132,4 +133,24 @@ List_Of_Recipes * read_file(int type){
      printf("JSON string: %sn", string);
      json_object * jobj = json_tokener_parse(string);
      json_parse(jobj);*/
+}
+
+Recipe * copyRecipe(Recipe * recipe){
+    Recipe * r = (Recipe *) malloc(sizeof(Recipe));
+    r->id = recipe->cuisine;
+    strcpy(r->cuisine, recipe->cuisine);
+    r->counter = recipe->counter;
+    return r;
+}
+
+Ingredient * copyIngredients(Ingredient * ingredients, int number){
+    Ingredient ** ings = (Ingredient *) malloc(sizeof(Ingredient));
+    for(int i = 0; i < number; i++){
+        Ingredient * ing = (Ingredient *) malloc(sizeof(Ingredient));
+        strcpy(ing->name, ingredients[i].name);
+        ings[i] = ing;
+
+    }
+
+    return ings;
 }

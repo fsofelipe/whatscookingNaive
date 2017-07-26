@@ -21,6 +21,8 @@ main.h
 /home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/main.h
 recipe.h
 /home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/recipe.h
+naive_bayes.h
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/naive_bayes.h
 
 /home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/main.h
 stdio.h
@@ -43,6 +45,8 @@ stdio.h
 -
 recipe.h
 /home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/recipe.h
+jsonParser.h
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/jsonParser.h
 
 /home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/recipe.h
 json/json.h

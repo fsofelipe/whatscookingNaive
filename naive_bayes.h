@@ -9,7 +9,7 @@
 #include "recipe.h"
 
 typedef struct likelihood_table{
-    Recipe recipe;
+    Recipe * recipe;
     int no_total;
     int yes_total;
 } Likelihood_Table;
