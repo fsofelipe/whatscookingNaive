@@ -1,0 +1,8 @@
+//
+// Created by matheus on 25/07/17.
+//
+
+#ifndef WHATSCOOKINGNAIVE_RECIPE_H
+#define WHATSCOOKINGNAIVE_RECIPE_H
+
+#endif //WHATSCOOKINGNAIVE_RECIPE_H
