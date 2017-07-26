@@ -7,9 +7,9 @@
 #include "naive_bayes.h"
 
 int main() {
-    List_Of_Recipes * train = read_file(1);
-    List_Of_Recipes * test = read_file(2);
+    List_Of_Recipes * train_dataset = read_file(1);
+    List_Of_Recipes * test_dataset = read_file(2);
 
-    mount_tables(train);
+    train(train_dataset);
 
 }

@@ -10,15 +10,14 @@
 
 typedef struct ingredient{
     char * name;
-    int yes_times;
-    int no_times;
+    double frequency; // 1(ingredient number) + 1(naive bayes 0 factor) / (number of ingredients of this recipe).
 } Ingredient;
 
 typedef struct recipe {
     int id; //cuisine id
     char* cuisine; //cuisine name
     int counter; //cuisine counter
-    Ingredient * ingredients; //list of ingredients that are part of the cuisine
+    Ingredient ** ingredients; //list of ingredients that are part of the cuisine
     int number_ingredients;
 } Recipe;
 
@@ -33,7 +32,11 @@ void print_recipe_list(List_Of_Recipes *list, int withCuisine);
 
 List_Of_Recipes * read_file(int type);
 
-Recipe * copyRecipe(Recipe * recipe);
+void copyRecipe(Recipe * toBeFilled, Recipe * recipe);
 
-Ingredient * copyIngredients(Ingredient * ingredients, int number);
+void copyIngredientsToRecipe(Ingredient ** ingredients, int number, Recipe * recipe, int total_ingredients);
+
+void free_list(List_Of_Recipes * list);
+
+void free_recipe(Recipe * recipe);
 #endif //WHATSCOOKINGNAIVE_RECIPE_H

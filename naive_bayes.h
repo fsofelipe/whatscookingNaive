@@ -10,13 +10,13 @@
 
 typedef struct likelihood_table{
     Recipe * recipe;
-    int no_total;
-    int yes_total;
+    int likelihood_yes;
+    int likelihood_no;
 } Likelihood_Table;
 
 typedef struct list_likelihood_table{
     int count;
-    Likelihood_Table * list;
+    Likelihood_Table ** list;
 } List_likelihood_table;
 
 //                                      Recipe
@@ -35,7 +35,10 @@ typedef struct list_likelihood_table{
 // P(c) = P(Yes) = C
 // P(c|x) = P(Yes | Sunny) =  P(x|c) * P(c) / P(x) --> GOAL
 
-void train();
+// Frequencia do nao = nao vai ser salvo os ingredientes que nao tem na receita para nao desperdicar memoria nem trabalho, para calcular
+// a frequencia de um ingrediente que nao ta na receita, vai ser 1 / (total_ingredients - number_ingredients) assim retornando a frequencia
+// do nao. O likelihood_no é (total_ingredients - number_ingredients).
+void train(List_Of_Recipes * recipes);
 Likelihood_Table * mount_tables(List_Of_Recipes * recipes);
-
+void print_likelihood_tables(List_likelihood_table * table);
 #endif //WHATSCOOKINGNAIVE_NAIVE_BAYES_H

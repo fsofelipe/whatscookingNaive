@@ -14,7 +14,7 @@ void print_recipe(Recipe *recipe, int withCuisine){
     }
 
     for(int z = 0; z < recipe->number_ingredients; z++){
-        printf("Ingredient: %s \n", recipe->ingredients[z].name);
+        printf("Ingredient: %s Frequency: %f \n", recipe->ingredients[z]->name, recipe->ingredients[z]->frequency);
     }
     printf("\n");
 }
@@ -135,22 +135,36 @@ List_Of_Recipes * read_file(int type){
      json_parse(jobj);*/
 }
 
-Recipe * copyRecipe(Recipe * recipe){
-    Recipe * r = (Recipe *) malloc(sizeof(Recipe));
-    r->id = recipe->cuisine;
-    strcpy(r->cuisine, recipe->cuisine);
-    r->counter = recipe->counter;
-    return r;
+void copyRecipe(Recipe * toBeFilled, Recipe * recipe){
+    toBeFilled->cuisine = (char *) malloc(sizeof(char));
+    toBeFilled->id = recipe->id;
+    toBeFilled->cuisine = recipe->cuisine;
+    strcpy(toBeFilled->cuisine, recipe->cuisine);
+    toBeFilled->counter = recipe->counter;
 }
 
-Ingredient * copyIngredients(Ingredient * ingredients, int number){
-    Ingredient ** ings = (Ingredient *) malloc(sizeof(Ingredient));
-    for(int i = 0; i < number; i++){
-        Ingredient * ing = (Ingredient *) malloc(sizeof(Ingredient));
-        strcpy(ing->name, ingredients[i].name);
-        ings[i] = ing;
+void copyIngredientsToRecipe(Ingredient ** ingredients, int number, Recipe * recipe, int total_ingredients){
+    recipe->ingredients = (Ingredient *) malloc(sizeof(Ingredient) * number);
+    recipe->number_ingredients = number;
 
+    for(int z = 0; z < number; z++){
+        Ingredient * ing = (Ingredient *) malloc(sizeof(Ingredient));
+        ing->name = ingredients[z]->name;
+        ing->frequency = (double) 2 / number;
+        recipe->ingredients[z] = ing;
+    }
+}
+
+void free_list(List_Of_Recipes * list){
+    for(int i = 0; i < list->number; i++){
+        free_recipe(list->list[i]);
+        free(list->list[i]);
     }
 
-    return ings;
+    free(list->list);
+    free(list);
+}
+
+void free_recipe(Recipe * recipe){
+    free(recipe->ingredients);
 }

@@ -57,7 +57,8 @@ void json_parse_array( json_object *jobj, char *key, Recipe * recipe) {
         else if (type != json_type_object) {
             //printf("value[%d]: ",i);
             print_json_value(jvalue, recipe, 0);
-            recipe->ingredients[i].name = json_object_get_string(jvalue);
+            recipe->ingredients[i] = (Ingredient *) malloc(sizeof(Ingredient));
+            recipe->ingredients[i]->name = json_object_get_string(jvalue);
             //printf("Ingredient: %s\n", recipe->ingredients[i]);
 
         }
