@@ -177,6 +177,60 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/naive.dir/build.make CMakeFiles/naive.dir/main.c.s
 .PHONY : main.c.s
 
+naive_bayes.o: naive_bayes.c.o
+
+.PHONY : naive_bayes.o
+
+# target to build an object file
+naive_bayes.c.o:
+	$(MAKE) -f CMakeFiles/naive.dir/build.make CMakeFiles/naive.dir/naive_bayes.c.o
+.PHONY : naive_bayes.c.o
+
+naive_bayes.i: naive_bayes.c.i
+
+.PHONY : naive_bayes.i
+
+# target to preprocess a source file
+naive_bayes.c.i:
+	$(MAKE) -f CMakeFiles/naive.dir/build.make CMakeFiles/naive.dir/naive_bayes.c.i
+.PHONY : naive_bayes.c.i
+
+naive_bayes.s: naive_bayes.c.s
+
+.PHONY : naive_bayes.s
+
+# target to generate assembly for a file
+naive_bayes.c.s:
+	$(MAKE) -f CMakeFiles/naive.dir/build.make CMakeFiles/naive.dir/naive_bayes.c.s
+.PHONY : naive_bayes.c.s
+
+recipe.o: recipe.c.o
+
+.PHONY : recipe.o
+
+# target to build an object file
+recipe.c.o:
+	$(MAKE) -f CMakeFiles/naive.dir/build.make CMakeFiles/naive.dir/recipe.c.o
+.PHONY : recipe.c.o
+
+recipe.i: recipe.c.i
+
+.PHONY : recipe.i
+
+# target to preprocess a source file
+recipe.c.i:
+	$(MAKE) -f CMakeFiles/naive.dir/build.make CMakeFiles/naive.dir/recipe.c.i
+.PHONY : recipe.c.i
+
+recipe.s: recipe.c.s
+
+.PHONY : recipe.s
+
+# target to generate assembly for a file
+recipe.c.s:
+	$(MAKE) -f CMakeFiles/naive.dir/build.make CMakeFiles/naive.dir/recipe.c.s
+.PHONY : recipe.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -192,6 +246,12 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... naive_bayes.o"
+	@echo "... naive_bayes.i"
+	@echo "... naive_bayes.s"
+	@echo "... recipe.o"
+	@echo "... recipe.i"
+	@echo "... recipe.s"
 .PHONY : help
 
 

@@ -6,6 +6,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_C
   "/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/jsonParser.c" "/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cmake-build-debug/CMakeFiles/naive.dir/jsonParser.c.o"
   "/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/main.c" "/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cmake-build-debug/CMakeFiles/naive.dir/main.c.o"
+  "/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/naive_bayes.c" "/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cmake-build-debug/CMakeFiles/naive.dir/naive_bayes.c.o"
+  "/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/recipe.c" "/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cmake-build-debug/CMakeFiles/naive.dir/recipe.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

@@ -96,6 +96,18 @@
 		<Unit filename="/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/main.h">
 			<Option target="naive"/>
 		</Unit>
+		<Unit filename="/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/naive_bayes.c">
+			<Option target="naive"/>
+		</Unit>
+		<Unit filename="/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/naive_bayes.h">
+			<Option target="naive"/>
+		</Unit>
+		<Unit filename="/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/recipe.c">
+			<Option target="naive"/>
+		</Unit>
+		<Unit filename="/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/recipe.h">
+			<Option target="naive"/>
+		</Unit>
 		<Unit filename="/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

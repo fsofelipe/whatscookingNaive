@@ -3,9 +3,17 @@
 
 CMakeFiles/naive.dir/jsonParser.c.o: ../jsonParser.c
 CMakeFiles/naive.dir/jsonParser.c.o: ../jsonParser.h
-CMakeFiles/naive.dir/jsonParser.c.o: ../main.h
+CMakeFiles/naive.dir/jsonParser.c.o: ../recipe.h
 
-CMakeFiles/naive.dir/main.c.o: ../jsonParser.h
 CMakeFiles/naive.dir/main.c.o: ../main.c
 CMakeFiles/naive.dir/main.c.o: ../main.h
+CMakeFiles/naive.dir/main.c.o: ../recipe.h
+
+CMakeFiles/naive.dir/naive_bayes.c.o: ../main.h
+CMakeFiles/naive.dir/naive_bayes.c.o: ../naive_bayes.c
+CMakeFiles/naive.dir/naive_bayes.c.o: ../naive_bayes.h
+CMakeFiles/naive.dir/naive_bayes.c.o: ../recipe.h
+
+CMakeFiles/naive.dir/recipe.c.o: ../recipe.c
+CMakeFiles/naive.dir/recipe.c.o: ../recipe.h
 
