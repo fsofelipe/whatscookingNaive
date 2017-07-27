@@ -1,7 +1,9 @@
-#ifndef WHATSCOOKINGNAIVE_MAIN_H
-#define WHATSCOOKINGNAIVE_MAIN_H
+#ifndef MAIN_H
+
+#define MAIN_H
+
 
 #include <stdio.h>
 
 
-#endif //WHATSCOOKINGNAIVE_MAIN_H
+#endif

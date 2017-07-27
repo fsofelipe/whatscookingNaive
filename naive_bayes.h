@@ -38,7 +38,10 @@ typedef struct list_likelihood_table{
 // Frequencia do nao = nao vai ser salvo os ingredientes que nao tem na receita para nao desperdicar memoria nem trabalho, para calcular
 // a frequencia de um ingrediente que nao ta na receita, vai ser 1 / (total_ingredients - number_ingredients) assim retornando a frequencia
 // do nao. O likelihood_no é (total_ingredients - number_ingredients).
+
 void train(List_Of_Recipes * recipes);
+
 Likelihood_Table * mount_tables(List_Of_Recipes * recipes);
+
 void print_likelihood_tables(List_likelihood_table * table);
 #endif //WHATSCOOKINGNAIVE_NAIVE_BAYES_H
