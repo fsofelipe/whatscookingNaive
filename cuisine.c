@@ -20,7 +20,7 @@ List_Of_Recipes * read_file(int type){
     ssize_t read;
 
     List_Of_Recipes * recipe_list = (List_Of_Recipes *) malloc(sizeof(List_Of_Recipes));
-    recipe_list->number = 0;
+    recipe_list->total_recipes = 0;
 
     recipe_list->list = (recipe_t *) malloc(sizeof(recipe_t));
 
@@ -72,9 +72,9 @@ List_Of_Recipes * read_file(int type){
                 json_parse(jobj, r);
                 //object = malloc(size);
                 //print_recipe(r);
-                recipe_list->list[recipe_list->number] = r;
-                recipe_list->number++;
-                recipe_list->list = realloc(recipe_list->list, recipe_list->number * sizeof(recipe_t));
+                recipe_list->list[recipe_list->total_recipes] = r;
+                recipe_list->total_recipes++;
+                recipe_list->list = realloc(recipe_list->list, recipe_list->total_recipes * sizeof(recipe_t));
                 // strcpy(object, "0");
                 // SALVA NO OBJETO
             }
@@ -114,18 +114,19 @@ List_Of_Recipes * read_file(int type){
 
 void print_recipe(recipe_t *recipe, int withCuisine){
     if(withCuisine == 1){
-        printf("ID: %d, Cuisine: %s, Ingredients:\n", recipe->id, recipe->cuisine);
+        printf("ID: %d\nCuisine: %s\n---\nIngredients:\n", recipe->id, recipe->cuisine);
     }else{
-        printf("ID: %d, Ingredients:\n", recipe->id);
+        printf("ID: %d\nIngredients:\n", recipe->id);
     }
     for(int z = 0; z < recipe->number_ingredients; z++){
-      printf("Ingredient: %s\n", recipe->ingredients[z]);
+      printf("%s\n", recipe->ingredients[z]);
     }
 
+    printf("\n===\n");
 }
 
 void print_recipe_list(List_Of_Recipes *list, int withCuisine){
-    for(int i = 0; i < list->number; i++){
+    for(int i = 0; i < list->total_recipes; i++){
         print_recipe(list->list[i], withCuisine);
     }
 }

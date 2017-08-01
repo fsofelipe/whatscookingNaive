@@ -8,11 +8,11 @@ typedef struct recipes{
   int id;
   char *cuisine;
   char **ingredients;
-  int number_ingredients
+  int number_ingredients;
 } recipe_t;
 
 typedef struct list_of_recipes{
-    int number; //total of ingredients in all recipes
+    int total_recipes; //how many recipes exists
     recipe_t **list;
 } List_Of_Recipes;
 
