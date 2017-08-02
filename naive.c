@@ -101,3 +101,17 @@ void getIngredients(List_Of_Recipes *recipes, cuisine_t *cuisine_list, int cuisi
     }
 
 }
+
+void writeCSV(int *ids, char ** cuisines, int number){
+    FILE *fp;
+
+    fp=fopen("output.csv","w+");
+
+    fprintf(fp,"id,cuisine");
+
+    for(int i =0; i < number; i++){
+        fprintf(fp,"\n%d,%s", ids[i], cuisines[i]);
+    }
+
+    fclose(fp);
+}

@@ -1,6 +1,7 @@
 #include "cuisine.h"
 #include <string.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 typedef struct ingredient{
     char name[100];
@@ -27,3 +28,6 @@ cuisine_t *getCuisines(List_Of_Recipes *recipes, int *size);
 // cuisine_list: list of all cuisines types
 // cuisine_size: size of the list of cuisines
 void getIngredients(List_Of_Recipes *recipes, cuisine_t *cuisine_list, int cuisine_size);
+
+
+void writeCSV(int *ids, char ** cuisines, int number);

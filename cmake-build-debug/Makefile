@@ -123,6 +123,33 @@ naive/fast:
 	$(MAKE) -f CMakeFiles/naive.dir/build.make CMakeFiles/naive.dir/build
 .PHONY : naive/fast
 
+cuisine.o: cuisine.c.o
+
+.PHONY : cuisine.o
+
+# target to build an object file
+cuisine.c.o:
+	$(MAKE) -f CMakeFiles/naive.dir/build.make CMakeFiles/naive.dir/cuisine.c.o
+.PHONY : cuisine.c.o
+
+cuisine.i: cuisine.c.i
+
+.PHONY : cuisine.i
+
+# target to preprocess a source file
+cuisine.c.i:
+	$(MAKE) -f CMakeFiles/naive.dir/build.make CMakeFiles/naive.dir/cuisine.c.i
+.PHONY : cuisine.c.i
+
+cuisine.s: cuisine.c.s
+
+.PHONY : cuisine.s
+
+# target to generate assembly for a file
+cuisine.c.s:
+	$(MAKE) -f CMakeFiles/naive.dir/build.make CMakeFiles/naive.dir/cuisine.c.s
+.PHONY : cuisine.c.s
+
 jsonParser.o: jsonParser.c.o
 
 .PHONY : jsonParser.o
@@ -177,59 +204,32 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/naive.dir/build.make CMakeFiles/naive.dir/main.c.s
 .PHONY : main.c.s
 
-naive_bayes.o: naive_bayes.c.o
+naive.o: naive.c.o
 
-.PHONY : naive_bayes.o
-
-# target to build an object file
-naive_bayes.c.o:
-	$(MAKE) -f CMakeFiles/naive.dir/build.make CMakeFiles/naive.dir/naive_bayes.c.o
-.PHONY : naive_bayes.c.o
-
-naive_bayes.i: naive_bayes.c.i
-
-.PHONY : naive_bayes.i
-
-# target to preprocess a source file
-naive_bayes.c.i:
-	$(MAKE) -f CMakeFiles/naive.dir/build.make CMakeFiles/naive.dir/naive_bayes.c.i
-.PHONY : naive_bayes.c.i
-
-naive_bayes.s: naive_bayes.c.s
-
-.PHONY : naive_bayes.s
-
-# target to generate assembly for a file
-naive_bayes.c.s:
-	$(MAKE) -f CMakeFiles/naive.dir/build.make CMakeFiles/naive.dir/naive_bayes.c.s
-.PHONY : naive_bayes.c.s
-
-recipe.o: recipe.c.o
-
-.PHONY : recipe.o
+.PHONY : naive.o
 
 # target to build an object file
-recipe.c.o:
-	$(MAKE) -f CMakeFiles/naive.dir/build.make CMakeFiles/naive.dir/recipe.c.o
-.PHONY : recipe.c.o
+naive.c.o:
+	$(MAKE) -f CMakeFiles/naive.dir/build.make CMakeFiles/naive.dir/naive.c.o
+.PHONY : naive.c.o
 
-recipe.i: recipe.c.i
+naive.i: naive.c.i
 
-.PHONY : recipe.i
+.PHONY : naive.i
 
 # target to preprocess a source file
-recipe.c.i:
-	$(MAKE) -f CMakeFiles/naive.dir/build.make CMakeFiles/naive.dir/recipe.c.i
-.PHONY : recipe.c.i
+naive.c.i:
+	$(MAKE) -f CMakeFiles/naive.dir/build.make CMakeFiles/naive.dir/naive.c.i
+.PHONY : naive.c.i
 
-recipe.s: recipe.c.s
+naive.s: naive.c.s
 
-.PHONY : recipe.s
+.PHONY : naive.s
 
 # target to generate assembly for a file
-recipe.c.s:
-	$(MAKE) -f CMakeFiles/naive.dir/build.make CMakeFiles/naive.dir/recipe.c.s
-.PHONY : recipe.c.s
+naive.c.s:
+	$(MAKE) -f CMakeFiles/naive.dir/build.make CMakeFiles/naive.dir/naive.c.s
+.PHONY : naive.c.s
 
 # Help Target
 help:
@@ -240,18 +240,18 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... naive"
+	@echo "... cuisine.o"
+	@echo "... cuisine.i"
+	@echo "... cuisine.s"
 	@echo "... jsonParser.o"
 	@echo "... jsonParser.i"
 	@echo "... jsonParser.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... naive_bayes.o"
-	@echo "... naive_bayes.i"
-	@echo "... naive_bayes.s"
-	@echo "... recipe.o"
-	@echo "... recipe.i"
-	@echo "... recipe.s"
+	@echo "... naive.o"
+	@echo "... naive.i"
+	@echo "... naive.s"
 .PHONY : help
 
 
