@@ -38,8 +38,12 @@ int main() {
         teste += cuisines_list[i].probability;
     }
 
-    printf("%lf\n", teste);
-    printf("%lf\n", getIngredientProb("2\% reduced-fat milk", 21, global_ingredients, total_ingredients));
-
-
+    printf("prova real das probabilidades das classes: %lf\n", teste);
+    //printf("%lf\n", getIngredientProb("2\% reduced-fat milk", 21, global_ingredients, total_ingredients));
+    int i, total = 0;
+    for (i = 0; i< size_cuisines; i++){
+        total+=cuisines_list[i].total_ingredients;
+        printf("%d\n", cuisines_list[i].total_ingredients);
+    }
+    printf("%d\n", total);
 }

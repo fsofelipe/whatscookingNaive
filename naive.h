@@ -1,6 +1,7 @@
 #include "cuisine.h"
 #include <string.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 typedef struct ingredient{
     char name[100];
@@ -12,6 +13,7 @@ typedef struct cuisine{
   int total; //amount of recipes that are part of this culinary type
   ingredient_t *ingredient_list;
   int distintic_ingredients;
+  int total_ingredients;
   double probability;
 }cuisine_t;
 
@@ -39,6 +41,8 @@ void getClassProb(cuisine_t *cuisine_list, int cuisine_size, int total_recipes);
 // name: the name of the ingredient
 // frequency: frequency of this ingredient in a cuisine typedef
 // global_ingredients: list of all ingredients from all recipes
-// ingredient_size: size of the list of global_ingredients 
+// ingredient_size: size of the list of global_ingredients
 // return: the probability
 double getIngredientProb(char *name, int frequency, ingredient_t *global_ingredients, int ingredient_size);
+
+void writeCSV(int *ids, char ** cuisines, int number);

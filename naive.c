@@ -7,6 +7,7 @@ cuisine_t *getCuisines(List_Of_Recipes *recipes, int *size){
 
     cuisines[0].total = 0;
     cuisines[0].distintic_ingredients = 1;
+    cuisines[0].total = 1;
     cuisines[0].ingredient_list = (ingredient_t *) malloc (sizeof(ingredient_t) * 1);
     strcpy (cuisines[0].ingredient_list[0].name, "-");
     cuisines[0].ingredient_list[0].amount = 0;
@@ -53,6 +54,8 @@ cuisine_t *getCuisines(List_Of_Recipes *recipes, int *size){
                 if (strcmp(cuisines[j].ingredient_list[l].name, "-") == 0){
                     strcpy (cuisines[j].ingredient_list[l].name, recipes->list[i]->ingredients[k]);
                     cuisines[j].ingredient_list[l].amount = 1;
+                    cuisines[j].total_ingredients = 1;
+
                 }
                 if (strcmp(cuisines[j].ingredient_list[l].name, recipes->list[i]->ingredients[k]) == 0)
                     break;
@@ -60,6 +63,8 @@ cuisine_t *getCuisines(List_Of_Recipes *recipes, int *size){
             if (l < cuisines[j].distintic_ingredients){
                 //ingredient already exist in this cuisine
                 cuisines[j].ingredient_list[l].amount = cuisines[j].ingredient_list[l].amount + 1;
+                cuisines[j].total_ingredients = cuisines[j].total_ingredients + 1;
+
             }else{
                 //new ingredient
                 cuisines[j].distintic_ingredients = cuisines[j].distintic_ingredients + 1;
@@ -67,6 +72,7 @@ cuisine_t *getCuisines(List_Of_Recipes *recipes, int *size){
 
                 strcpy(cuisines[j].ingredient_list[l].name, recipes->list[i]->ingredients[k]);
                 cuisines[j].ingredient_list[l].amount = 1;
+                cuisines[j].total_ingredients = cuisines[j].total_ingredients + 1;
             }
 
 
@@ -142,4 +148,18 @@ double getIngredientProb(char *name, int frequency, ingredient_t *global_ingredi
 
 
     return prob;
+}
+
+void writeCSV(int *ids, char ** cuisines, int number){
+    FILE *fp;
+
+    fp=fopen("output.csv","w+");
+
+    fprintf(fp,"id,cuisine");
+
+    for(int i =0; i < number; i++){
+        fprintf(fp,"\n%d,%s", ids[i], cuisines[i]);
+    }
+
+    fclose(fp);
 }
