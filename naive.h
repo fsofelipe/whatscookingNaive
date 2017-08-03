@@ -12,8 +12,8 @@ typedef struct cuisine{
   int total; //amount of recipes that are part of this culinary type
   ingredient_t *ingredient_list;
   int distintic_ingredients;
+  double probability;
 }cuisine_t;
-
 
 
 // read all recipes on the list and counts the elements
@@ -26,4 +26,19 @@ cuisine_t *getCuisines(List_Of_Recipes *recipes, int *size);
 // recipes:  list of all recipes
 // cuisine_list: list of all cuisines types
 // cuisine_size: size of the list of cuisines
-void getIngredients(List_Of_Recipes *recipes, cuisine_t *cuisine_list, int cuisine_size);
+ingredient_t *getIngredients(cuisine_t *cuisine_list, int cuisine_size, int *ingredient_size);
+
+
+// calculate each cuisine probability and stores in the cuisine array
+// cuisines_list: list of all types of cuisine
+// size of the list cuisines_list
+// total_recipes: all recipes in the dataset
+void getClassProb(cuisine_t *cuisine_list, int cuisine_size, int total_recipes);
+
+// calculate the probability of X ingredient in the list of all ingredient
+// name: the name of the ingredient
+// frequency: frequency of this ingredient in a cuisine typedef
+// global_ingredients: list of all ingredients from all recipes
+// ingredient_size: size of the list of global_ingredients 
+// return: the probability
+double getIngredientProb(char *name, int frequency, ingredient_t *global_ingredients, int ingredient_size);

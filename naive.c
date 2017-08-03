@@ -75,29 +75,71 @@ cuisine_t *getCuisines(List_Of_Recipes *recipes, int *size){
         //printf("\n");
 
 
-
-
-
-
     }
 
     return cuisines;
 }
 
-void getIngredients(List_Of_Recipes *recipes, cuisine_t *cuisine_list, int cuisine_size){
-    int i = 0, j = 0;
-    //access each recipes
-    for (i = 0; i < recipes->total_recipes; i++){
-        for (j=0; j < cuisine_size; j++){
-            //recipe belongs to a cuisine_list[j] type
-            if (strcmp(recipes->list[i]->cuisine, cuisine_list[j].name) == 0){
-                printf("%s - %s\n", recipes->list[i]->cuisine, cuisine_list[j].name);
+ingredient_t *getIngredients(cuisine_t *cuisine_list, int cuisine_size, int *ingredient_size){
+    ingredient_t *global = (ingredient_t *) malloc (sizeof(ingredient_t) * 1);
 
+    *ingredient_size = 1;
+
+    strcpy(global[0].name, cuisine_list[0].ingredient_list[0].name);
+    global[0].amount = 0;
+
+    //ITERATORS:
+    // i = cuisines types
+    // j = independents ingredients in the cuisines types
+    // k = global ingredients
+    int i = 0, j = 0, k =0;
+
+    //access each cuisine
+    for (i = 0; i < cuisine_size; i++){
+        for (j = 0; j < cuisine_list[i].distintic_ingredients; j++){
+            //printf("%s - %s\n", cuisine_list[i].name, cuisine_list[i].ingredient_list[j].name);
+
+            for (k = 0; k < *ingredient_size; k++){
+                if (strcmp(cuisine_list[i].ingredient_list[j].name, global[k].name) == 0)
+                    break;
 
             }
+            //not new
+            if (k < *ingredient_size){
+                global[k].amount = global[k].amount + cuisine_list[i].ingredient_list[j].amount;
+            }else{
+                //new
+                global = (ingredient_t *) realloc (global, (k + 1) * sizeof(ingredient_t));
+                strcpy(global[k].name, cuisine_list[i].ingredient_list[j].name);
+                global[k].amount = cuisine_list[i].ingredient_list[j].amount;
+                *ingredient_size= *ingredient_size + 1;
+            }
+        }
 
+    }
+    return global;
+}
+
+void getClassProb(cuisine_t *cuisine_list, int cuisine_size, int total_recipes){
+    int i = 0;
+    for (i = 0; i < cuisine_size; i++){
+        cuisine_list[i].probability = (double)cuisine_list[i].total / (double)total_recipes;
+    }
+}
+
+double getIngredientProb(char *name, int frequency, ingredient_t *global_ingredients, int ingredient_size){
+    double prob;
+    int i = 0;
+    for (i = 0; i < ingredient_size; i++){
+        if (strcmp(name, global_ingredients[i].name) == 0){
+            prob = (double)frequency/(double)global_ingredients[i].amount;
+            break;
         }
 
     }
 
+
+
+
+    return prob;
 }
