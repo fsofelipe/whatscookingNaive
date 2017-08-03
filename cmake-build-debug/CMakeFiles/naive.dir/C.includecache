@@ -6,6 +6,20 @@
 
 #IncludeRegexTransform: 
 
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cuisine.c
+cuisine.h
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cuisine.h
+stdio.h
+-
+jsonParser.h
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/jsonParser.h
+
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cuisine.h
+json/json.h
+-
+memory.h
+-
+
 /home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/jsonParser.c
 jsonParser.h
 /home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/jsonParser.h
@@ -13,44 +27,32 @@ jsonParser.h
 /home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/jsonParser.h
 json/json_object.h
 -
-recipe.h
-/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/recipe.h
+cuisine.h
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cuisine.h
 
 /home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/main.c
+cuisine.h
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cuisine.h
+naive.h
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/naive.h
 main.h
 /home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/main.h
-recipe.h
-/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/recipe.h
-naive_bayes.h
-/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/naive_bayes.h
 
 /home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/main.h
 stdio.h
 -
 
-/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/naive_bayes.c
-naive_bayes.h
-/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/naive_bayes.h
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/naive.c
+naive.h
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/naive.h
 
-/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/naive_bayes.h
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/naive.h
+cuisine.h
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cuisine.h
+string.h
+-
+stdlib.h
+-
 stdio.h
--
-main.h
-/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/main.h
-recipe.h
-/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/recipe.h
-
-/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/recipe.c
-stdio.h
--
-recipe.h
-/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/recipe.h
-jsonParser.h
-/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/jsonParser.h
-
-/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/recipe.h
-json/json.h
--
-memory.h
 -
 

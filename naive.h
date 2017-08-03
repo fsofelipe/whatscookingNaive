@@ -45,4 +45,6 @@ void getClassProb(cuisine_t *cuisine_list, int cuisine_size, int total_recipes);
 // return: the probability
 double getIngredientProb(char *name, int frequency, ingredient_t *global_ingredients, int ingredient_size);
 
+void getIngredients(List_Of_Recipes *recipes, cuisine_t *cuisine_list, int cuisine_size);
+
 void writeCSV(int *ids, char ** cuisines, int number);
