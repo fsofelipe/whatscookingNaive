@@ -200,17 +200,19 @@ result_t reading(cuisine_t *cuisines, int size_cuisines, recipe_t *recipe){
     double *saida = getRecipeProb(cuisines, size_cuisines, recipe);
     int big = findBiggest(saida, size_cuisines);
 
-    result_t out = malloc (sizeof(result_t));
+    result_t out;
 
-    out.id = recipe.id;
+    out.id = recipe->id;
     strcpy(out.name, cuisines[big].name);
 
+    printf("%d - %s\n", out.id, out.name);
     return out;
 }
 
 result_t *readAll(List_Of_Recipes *recipes, cuisine_t *cuisines, int size_cuisines){
-    result_t *out = (result_t *) malloc (sizeof(result_t) * recipes->total_recipes);
 
+    result_t *out = (result_t *) malloc (sizeof(result_t) * recipes->total_recipes);
+    printf("---%d\n", recipes->total_recipes);
 
     int i = 0;
 

@@ -64,7 +64,7 @@ double *getRecipeProb(cuisine_t *cuisines, int size_cuisines, recipe_t *recipe);
 //read a vector of probabilities and return the index from the biggest
 int findBiggest(double *recipeProbs, int size_cuisines);
 
-result_t reading(cuisine_t *cuisines, int size_cuisines, recipe_t *recipe){
+result_t reading(cuisine_t *cuisines, int size_cuisines, recipe_t *recipe);
 
 result_t *readAll(List_Of_Recipes *recipes, cuisine_t *cuisines, int size_cuisines);
 
