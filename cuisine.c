@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include "jsonParser.h"
 
-List_Of_Recipes * read_file(int type){
+List_Of_Recipes * read_file(int type, List_Of_Recipes * recipe_list){
     //Type 1 = Train
     //Type 2 = Test
 
@@ -18,8 +18,8 @@ List_Of_Recipes * read_file(int type){
     char * line = NULL;
     size_t len = 0;
     ssize_t read;
+    int total_recipes = 0;
 
-    List_Of_Recipes * recipe_list = (List_Of_Recipes *) malloc(sizeof(List_Of_Recipes));
     recipe_list->total_recipes = 0;
 
     recipe_list->list = (recipe_t *) malloc(sizeof(recipe_t));
@@ -39,42 +39,33 @@ List_Of_Recipes * read_file(int type){
         char *object = malloc(1);
         int size = 0;
         for (i = 0; file_contents[i] != 0; i++){
-            //printf("%c", file_contents[i]);
-
             if(file_contents[i] == '{'){
-                // printf("FOUND FIRST");
                 found_first_bracket = i;
                 size = 0;
+
             }
 
             if(found_first_bracket > 0){
                 size++;
-                //char * willBeAdded = malloc(1);
-                //char * hold = object;
-                // object = (char*) malloc(size * sizeof(char));
-                //object = hold;
-                //object[size] = 'a';
-                //printf("%d", sizeof(object));
-                //strncat(willBeAdded, &file_contents[i], 1);
-                // strcat(object, willBeAdded);
-                //printf("%s\n", object);
-                // size++;
             }
 
             if(file_contents[i] == '}'){
-                char object[size];
+                char object[size+1];
                 memcpy(object, &file_contents[found_first_bracket], size);
+                printf("%s\n", object);
                 object[size] = '\0';
-                //printf("%s\n", object);
 
                 json_object * jobj = json_tokener_parse(object);
                 recipe_t *r = (recipe_t *) malloc(sizeof(recipe_t));
                 json_parse(jobj, r);
+
                 //object = malloc(size);
                 //print_recipe(r);
                 recipe_list->list[recipe_list->total_recipes] = r;
                 recipe_list->total_recipes++;
                 recipe_list->list = realloc(recipe_list->list, recipe_list->total_recipes * sizeof(recipe_t));
+
+
                 // strcpy(object, "0");
                 // SALVA NO OBJETO
             }

@@ -18,6 +18,8 @@ typedef struct list_of_recipes{
 
 List_Of_Recipes readFile(char *name);
 
+List_Of_Recipes * read_file(int type, List_Of_Recipes * recipe_list);
+
 void print_recipe(recipe_t *recipe, int withCuisine);
 
 void print_recipe_list(List_Of_Recipes *list, int withCuisine);
