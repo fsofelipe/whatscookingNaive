@@ -1,6 +1,6 @@
 CC=gcc
 
-CFLAGS= -w -l json -I/usr/local/Cellar/json-c/0.12/include/json-c/
+CFLAGS= -w -l json -I/usr/local/Cellar/json-c/0.12/include/json-c/ -lm
 
 run:
 	$(CC) main.c naive.c cuisine.c jsonParser.c -o teste $(CFLAGS)

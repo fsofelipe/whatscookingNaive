@@ -2,6 +2,8 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <math.h>
+#include <float.h>
 
 typedef struct ingredient{
     char name[100];
@@ -16,6 +18,8 @@ typedef struct cuisine{
   int total_ingredients;
   double probability;
 }cuisine_t;
+
+
 
 
 // read all recipes on the list and counts the elements
@@ -37,12 +41,24 @@ ingredient_t *getIngredients(cuisine_t *cuisine_list, int cuisine_size, int *ing
 // total_recipes: all recipes in the dataset
 void getClassProb(cuisine_t *cuisine_list, int cuisine_size, int total_recipes);
 
-// calculate the probability of X ingredient in the list of all ingredient
-// name: the name of the ingredient
-// frequency: frequency of this ingredient in a cuisine typedef
-// global_ingredients: list of all ingredients from all recipes
-// ingredient_size: size of the list of global_ingredients
-// return: the probability
-double getIngredientProb(char *name, int frequency, ingredient_t *global_ingredients, int ingredient_size);
+// calculate P( ingredient X | cuisine)
+// amountX = total of X in this cuisine type
+// total_ingredients = total of ingredients in this cuisine
+// distintic_ingredients = total of distintic ingredients in this cuisine
+double getIngredientProb(int amountX, int total_ingredients, int distintic_ingredients);
 
-void writeCSV(int *ids, char ** cuisines, int number);
+// finds the frequency of an element in a cuisine type
+int findFrequency(cuisine_t *cuisines, int size_cuisines, char *cuisineName, char *ingredient);
+
+// size_cuisines: how many cuisine types
+// cuisines: array with all cuisine types
+// recipe: recipe to be used
+// return a list with size = size_cuisines, which stores the probability of a recipe for all cuisine types
+double *getRecipeProb(int size_cuisines, cuisine_t *cuisines, recipe_t *recipe);
+
+//read a vector of probabilities and return the index from the biggest
+int findBiggest(double *recipeProbs, int size_cuisines);
+
+void readAll(List_Of_Recipes *recipes, int *size);
+
+void writeCSV(int *ids, char **cuisinesName, int number);

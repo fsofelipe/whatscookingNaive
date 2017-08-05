@@ -1,4 +1,5 @@
 #include "naive.h"
+
 cuisine_t *getCuisines(List_Of_Recipes *recipes, int *size){
     cuisine_t *cuisines =(cuisine_t *) malloc (sizeof(cuisine_t) * 1);
     *size = 1;
@@ -129,28 +130,81 @@ ingredient_t *getIngredients(cuisine_t *cuisine_list, int cuisine_size, int *ing
 void getClassProb(cuisine_t *cuisine_list, int cuisine_size, int total_recipes){
     int i = 0;
     for (i = 0; i < cuisine_size; i++){
-        cuisine_list[i].probability = (double)cuisine_list[i].total / (double)total_recipes;
+        cuisine_list[i].probability = log((double)cuisine_list[i].total / (double)total_recipes);
     }
 }
 
-double getIngredientProb(char *name, int frequency, ingredient_t *global_ingredients, int ingredient_size){
-    double prob;
-    int i = 0;
-    for (i = 0; i < ingredient_size; i++){
-        if (strcmp(name, global_ingredients[i].name) == 0){
-            prob = (double)frequency/(double)global_ingredients[i].amount;
-            break;
+double getIngredientProb(int amountX, int total_ingredients, int distintic_ingredients){
+    //printf("-- %lg\n", ((double)amountX + 1)/(double)(total_ingredients + distintic_ingredients));
+    return ((double)amountX + 1)/(double)(total_ingredients + distintic_ingredients);
+}
+
+int findFrequency(cuisine_t *cuisines, int size_cuisines, char *cuisineName, char *ingredient){
+  int ret = 0;
+  int i = 0, j = 0;
+
+  for (i = 0; i < size_cuisines; i++){
+    if (strcmp(cuisines[i].name, cuisineName) == 0){
+      break;
+    }
+  }
+
+
+  if (i < size_cuisines){
+    for (j = 0; j < cuisines[i].distintic_ingredients; j++){
+      if (strcmp(cuisines[i].ingredient_list[j].name, ingredient) == 0){
+        ret = cuisines[i].ingredient_list[j].amount;
+        break;
+      }
+    }
+
+  }
+
+  return ret;
+}
+
+double *getRecipeProb(int size_cuisines, cuisine_t *cuisines, recipe_t *recipe){
+  //array of probabilities for test recipes;
+  double *recipeProbs = (double *) malloc (sizeof(double) * size_cuisines);
+
+  int i = 0, j = 0;
+  for (i = 0; i < size_cuisines; i++){
+    double sum = 0;
+    for (j = 0; j < recipe->number_ingredients; j++){
+      //printf("%lg\n", cuisines[i].probability);
+      double aux = getIngredientProb(findFrequency(cuisines, size_cuisines, cuisines[i].name, recipe->ingredients[j]), cuisines[i].total_ingredients, cuisines[i].distintic_ingredients);
+
+      aux = log(aux) + cuisines[i].probability;
+      //printf("%lg\n", aux );
+      sum += aux;
+    }
+    recipeProbs[i] = sum;
+
+
+  }
+
+
+  return recipeProbs;
+}
+
+int findBiggest(double *recipeProbs, int size_cuisines){
+    int ret = 0;
+    double value = DBL_MAX;
+    for (int i = 0; i < size_cuisines; i++){
+        if (recipeProbs[i] > value){
+            ret = i;
+            value = recipeProbs[i];
         }
-
     }
 
-
-
-
-    return prob;
+    return ret;
 }
 
-void writeCSV(int *ids, char ** cuisines, int number){
+void readAll(List_Of_Recipes *recipes, int *size){
+    
+}
+
+void writeCSV(int *ids, char **cuisinesName, int number){
     FILE *fp;
 
     fp=fopen("output.csv","w+");
@@ -158,7 +212,7 @@ void writeCSV(int *ids, char ** cuisines, int number){
     fprintf(fp,"id,cuisine");
 
     for(int i =0; i < number; i++){
-        fprintf(fp,"\n%d,%s", ids[i], cuisines[i]);
+        fprintf(fp,"\n%d,%s", ids[i], cuisinesName[i]);
     }
 
     fclose(fp);
