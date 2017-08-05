@@ -19,6 +19,11 @@ typedef struct cuisine{
   double probability;
 }cuisine_t;
 
+typedef struct result{
+    char name[50];
+    int id;
+}result_t;
+
 
 
 
@@ -54,11 +59,13 @@ int findFrequency(cuisine_t *cuisines, int size_cuisines, char *cuisineName, cha
 // cuisines: array with all cuisine types
 // recipe: recipe to be used
 // return a list with size = size_cuisines, which stores the probability of a recipe for all cuisine types
-double *getRecipeProb(int size_cuisines, cuisine_t *cuisines, recipe_t *recipe);
+double *getRecipeProb(cuisine_t *cuisines, int size_cuisines, recipe_t *recipe);
 
 //read a vector of probabilities and return the index from the biggest
 int findBiggest(double *recipeProbs, int size_cuisines);
 
-void readAll(List_Of_Recipes *recipes, int *size);
+result_t reading(cuisine_t *cuisines, int size_cuisines, recipe_t *recipe){
+
+result_t *readAll(List_Of_Recipes *recipes, cuisine_t *cuisines, int size_cuisines);
 
 void writeCSV(int *ids, char **cuisinesName, int number);

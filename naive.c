@@ -163,7 +163,7 @@ int findFrequency(cuisine_t *cuisines, int size_cuisines, char *cuisineName, cha
   return ret;
 }
 
-double *getRecipeProb(int size_cuisines, cuisine_t *cuisines, recipe_t *recipe){
+double *getRecipeProb(cuisine_t *cuisines, int size_cuisines, recipe_t *recipe){
   //array of probabilities for test recipes;
   double *recipeProbs = (double *) malloc (sizeof(double) * size_cuisines);
 
@@ -179,11 +179,7 @@ double *getRecipeProb(int size_cuisines, cuisine_t *cuisines, recipe_t *recipe){
       sum += aux;
     }
     recipeProbs[i] = sum;
-
-
   }
-
-
   return recipeProbs;
 }
 
@@ -200,8 +196,29 @@ int findBiggest(double *recipeProbs, int size_cuisines){
     return ret;
 }
 
-void readAll(List_Of_Recipes *recipes, int *size){
-    
+result_t reading(cuisine_t *cuisines, int size_cuisines, recipe_t *recipe){
+    double *saida = getRecipeProb(cuisines, size_cuisines, recipe);
+    int big = findBiggest(saida, size_cuisines);
+
+    result_t out = malloc (sizeof(result_t));
+
+    out.id = recipe.id;
+    strcpy(out.name, cuisines[big].name);
+
+    return out;
+}
+
+result_t *readAll(List_Of_Recipes *recipes, cuisine_t *cuisines, int size_cuisines){
+    result_t *out = (result_t *) malloc (sizeof(result_t) * recipes->total_recipes);
+
+
+    int i = 0;
+
+    for (i = 0; i < recipes->total_recipes; i++){
+        out[i] = reading(cuisines, size_cuisines, recipes->list[i]);
+    }
+
+    return out;
 }
 
 void writeCSV(int *ids, char **cuisinesName, int number){
