@@ -185,8 +185,9 @@ double *getRecipeProb(cuisine_t *cuisines, int size_cuisines, recipe_t *recipe){
 
 int findBiggest(double *recipeProbs, int size_cuisines){
     int ret = 0;
-    double value = DBL_MAX;
+    double value = -DBL_MAX;
     for (int i = 0; i < size_cuisines; i++){
+        //printf("%lg\n", recipeProbs[i]);
         if (recipeProbs[i] > value){
             ret = i;
             value = recipeProbs[i];
@@ -199,7 +200,7 @@ int findBiggest(double *recipeProbs, int size_cuisines){
 result_t reading(cuisine_t *cuisines, int size_cuisines, recipe_t *recipe){
     double *saida = getRecipeProb(cuisines, size_cuisines, recipe);
     int big = findBiggest(saida, size_cuisines);
-
+    free(saida);
     result_t out;
 
     out.id = recipe->id;
@@ -209,21 +210,21 @@ result_t reading(cuisine_t *cuisines, int size_cuisines, recipe_t *recipe){
     return out;
 }
 
-result_t *readAll(List_Of_Recipes *recipes, cuisine_t *cuisines, int size_cuisines){
+result_t *readAll(List_Of_Recipes recipes, cuisine_t *cuisines, int size_cuisines){
 
-    result_t *out = (result_t *) malloc (sizeof(result_t) * recipes->total_recipes);
-    printf("---%d\n", recipes->total_recipes);
+    result_t *out = (result_t *) malloc (sizeof(result_t) * recipes.total_recipes);
+    printf("---%d\n", recipes.total_recipes);
 
     int i = 0;
 
-    for (i = 0; i < recipes->total_recipes; i++){
-        out[i] = reading(cuisines, size_cuisines, recipes->list[i]);
+    for (i = 0; i < recipes.total_recipes; i++){
+        out[i] = reading(cuisines, size_cuisines, recipes.list[i]);
     }
 
     return out;
 }
 
-void writeCSV(int *ids, char **cuisinesName, int number){
+void writeCSV(result_t *receipes, int number){
     FILE *fp;
 
     fp=fopen("output.csv","w+");
@@ -231,7 +232,7 @@ void writeCSV(int *ids, char **cuisinesName, int number){
     fprintf(fp,"id,cuisine");
 
     for(int i =0; i < number; i++){
-        fprintf(fp,"\n%d,%s", ids[i], cuisinesName[i]);
+        fprintf(fp,"\n%d,%s", receipes[i].id, receipes[i].name);
     }
 
     fclose(fp);

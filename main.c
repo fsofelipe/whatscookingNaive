@@ -32,8 +32,9 @@ int main() {
     printf(":=%d\n", test_dataset.total_recipes);
 
 
-    //result_t *a = (result_t *) malloc (sizeof(result_t) * test_dataset->total_recipes);
+    result_t *a = (result_t *) malloc (sizeof(result_t) * test_dataset.total_recipes);
 
+    a = readAll(test_dataset, cuisines_list, size_cuisines);
 
-    //a = readAll(test_dataset, cuisines_list, size_cuisines);
+    writeCSV(a, size_cuisines);
 }

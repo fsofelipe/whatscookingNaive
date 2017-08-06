@@ -52,7 +52,7 @@ List_Of_Recipes * read_file(int type, List_Of_Recipes * recipe_list){
             if(file_contents[i] == '}'){
                 char object[size+1];
                 memcpy(object, &file_contents[found_first_bracket], size);
-                printf("%s\n", object);
+                //printf("%s\n", object);
                 object[size] = '\0';
 
                 json_object * jobj = json_tokener_parse(object);
