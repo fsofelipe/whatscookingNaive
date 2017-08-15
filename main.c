@@ -36,5 +36,5 @@ int main() {
 
     a = readAll(test_dataset, cuisines_list, size_cuisines);
 
-    writeCSV(a, size_cuisines);
+    writeCSV(a, test_dataset.total_recipes);
 }
