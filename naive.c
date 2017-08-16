@@ -23,13 +23,16 @@ cuisine_t *getCuisines(List_Of_Recipes *recipes, int *size){
         char cuisine_name[50];
         strcpy (cuisine_name, recipes->list[i]->cuisine);
         //search if there is different type of cuisine
-
+        int found = 0;
         for (j = 0; j < *size; j++){
-            if (strcmp(cuisine_name, cuisines[j].name) == 0)
+            if (strcmp(cuisine_name, cuisines[j].name) == 0){
+                found = 1;
                 break;
+
+            }
         }
 
-        if (j < *size){
+        if (found == 1){
             //cuisine already exist
             cuisines[j].total++;
 
@@ -58,6 +61,7 @@ cuisine_t *getCuisines(List_Of_Recipes *recipes, int *size){
                     cuisines[j].total_ingredients = 1;
 
                 }
+                //printf("Comparing with: %s %d %d\n", cuisines[j].ingredient_list[l].name, l, cuisines[j].distintic_ingredients);
                 if (strcmp(cuisines[j].ingredient_list[l].name, recipes->list[i]->ingredients[k]) == 0)
                     break;
             }
@@ -79,10 +83,24 @@ cuisine_t *getCuisines(List_Of_Recipes *recipes, int *size){
 
         }
 
+
+
         //printf("\n");
 
 
     }
+
+    /*for (j = 0; j < *size; j++){
+        printf("Cuisine: %s\n", cuisines[j].name);
+        printf("Distinct Ingredients %d\n", cuisines[j].distintic_ingredients);
+        printf("Total ingredients %d\n", cuisines[j].total_ingredients);
+        printf("Ingredienst:\n");
+        for(int i = 0; i < cuisines[j].distintic_ingredients; i++){
+            printf("Name: %s Amount: %d\n", cuisines[j].ingredient_list[i].name, cuisines[j].ingredient_list[i].amount);
+
+        }
+
+    }*/
 
     return cuisines;
 }
@@ -130,13 +148,14 @@ ingredient_t *getIngredients(cuisine_t *cuisine_list, int cuisine_size, int *ing
 void getClassProb(cuisine_t *cuisine_list, int cuisine_size, int total_recipes){
     int i = 0;
     for (i = 0; i < cuisine_size; i++){
-        cuisine_list[i].probability = log((double)cuisine_list[i].total / (double)total_recipes);
+        // P(X)
+        cuisine_list[i].probability = log((double) cuisine_list[i].total) / log((double) total_recipes);
     }
 }
 
 double getIngredientProb(int amountX, int total_ingredients, int distintic_ingredients){
     //printf("-- %lg\n", ((double)amountX + 1)/(double)(total_ingredients + distintic_ingredients));
-    return ((double)amountX + 1)/(double)(total_ingredients + distintic_ingredients);
+    return (log((double)amountX + 1))/log((double)(total_ingredients + distintic_ingredients));
 }
 
 int findFrequency(cuisine_t *cuisines, int size_cuisines, char *cuisineName, char *ingredient){
@@ -174,7 +193,7 @@ double *getRecipeProb(cuisine_t *cuisines, int size_cuisines, recipe_t *recipe){
       //printf("%lg\n", cuisines[i].probability);
       double aux = getIngredientProb(findFrequency(cuisines, size_cuisines, cuisines[i].name, recipe->ingredients[j]), cuisines[i].total_ingredients, cuisines[i].distintic_ingredients);
 
-      aux = log(aux) + cuisines[i].probability;
+      aux = aux + cuisines[i].probability;
       //printf("%lg\n", aux );
       sum += aux;
     }

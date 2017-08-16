@@ -204,32 +204,32 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/naive.dir/build.make CMakeFiles/naive.dir/main.c.s
 .PHONY : main.c.s
 
-naive.o: naive.c.o
+naive_bayes.o: naive_bayes.c.o
 
-.PHONY : naive.o
+.PHONY : naive_bayes.o
 
 # target to build an object file
-naive.c.o:
-	$(MAKE) -f CMakeFiles/naive.dir/build.make CMakeFiles/naive.dir/naive.c.o
-.PHONY : naive.c.o
+naive_bayes.c.o:
+	$(MAKE) -f CMakeFiles/naive.dir/build.make CMakeFiles/naive.dir/naive_bayes.c.o
+.PHONY : naive_bayes.c.o
 
-naive.i: naive.c.i
+naive_bayes.i: naive_bayes.c.i
 
-.PHONY : naive.i
+.PHONY : naive_bayes.i
 
 # target to preprocess a source file
-naive.c.i:
-	$(MAKE) -f CMakeFiles/naive.dir/build.make CMakeFiles/naive.dir/naive.c.i
-.PHONY : naive.c.i
+naive_bayes.c.i:
+	$(MAKE) -f CMakeFiles/naive.dir/build.make CMakeFiles/naive.dir/naive_bayes.c.i
+.PHONY : naive_bayes.c.i
 
-naive.s: naive.c.s
+naive_bayes.s: naive_bayes.c.s
 
-.PHONY : naive.s
+.PHONY : naive_bayes.s
 
 # target to generate assembly for a file
-naive.c.s:
-	$(MAKE) -f CMakeFiles/naive.dir/build.make CMakeFiles/naive.dir/naive.c.s
-.PHONY : naive.c.s
+naive_bayes.c.s:
+	$(MAKE) -f CMakeFiles/naive.dir/build.make CMakeFiles/naive.dir/naive_bayes.c.s
+.PHONY : naive_bayes.c.s
 
 # Help Target
 help:
@@ -249,9 +249,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... naive.o"
-	@echo "... naive.i"
-	@echo "... naive.s"
+	@echo "... naive_bayes.o"
+	@echo "... naive_bayes.i"
+	@echo "... naive_bayes.s"
 .PHONY : help
 
 

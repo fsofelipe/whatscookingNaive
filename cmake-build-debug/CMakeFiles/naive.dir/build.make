@@ -129,28 +129,28 @@ CMakeFiles/naive.dir/cuisine.c.o.provides: CMakeFiles/naive.dir/cuisine.c.o.requ
 CMakeFiles/naive.dir/cuisine.c.o.provides.build: CMakeFiles/naive.dir/cuisine.c.o
 
 
-CMakeFiles/naive.dir/naive.c.o: CMakeFiles/naive.dir/flags.make
-CMakeFiles/naive.dir/naive.c.o: ../naive.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/naive.dir/naive.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/naive.dir/naive.c.o   -c /home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/naive.c
+CMakeFiles/naive.dir/naive_bayes.c.o: CMakeFiles/naive.dir/flags.make
+CMakeFiles/naive.dir/naive_bayes.c.o: ../naive_bayes.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/naive.dir/naive_bayes.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/naive.dir/naive_bayes.c.o   -c /home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/naive_bayes.c
 
-CMakeFiles/naive.dir/naive.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/naive.dir/naive.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/naive.c > CMakeFiles/naive.dir/naive.c.i
+CMakeFiles/naive.dir/naive_bayes.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/naive.dir/naive_bayes.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/naive_bayes.c > CMakeFiles/naive.dir/naive_bayes.c.i
 
-CMakeFiles/naive.dir/naive.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/naive.dir/naive.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/naive.c -o CMakeFiles/naive.dir/naive.c.s
+CMakeFiles/naive.dir/naive_bayes.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/naive.dir/naive_bayes.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/naive_bayes.c -o CMakeFiles/naive.dir/naive_bayes.c.s
 
-CMakeFiles/naive.dir/naive.c.o.requires:
+CMakeFiles/naive.dir/naive_bayes.c.o.requires:
 
-.PHONY : CMakeFiles/naive.dir/naive.c.o.requires
+.PHONY : CMakeFiles/naive.dir/naive_bayes.c.o.requires
 
-CMakeFiles/naive.dir/naive.c.o.provides: CMakeFiles/naive.dir/naive.c.o.requires
-	$(MAKE) -f CMakeFiles/naive.dir/build.make CMakeFiles/naive.dir/naive.c.o.provides.build
-.PHONY : CMakeFiles/naive.dir/naive.c.o.provides
+CMakeFiles/naive.dir/naive_bayes.c.o.provides: CMakeFiles/naive.dir/naive_bayes.c.o.requires
+	$(MAKE) -f CMakeFiles/naive.dir/build.make CMakeFiles/naive.dir/naive_bayes.c.o.provides.build
+.PHONY : CMakeFiles/naive.dir/naive_bayes.c.o.provides
 
-CMakeFiles/naive.dir/naive.c.o.provides.build: CMakeFiles/naive.dir/naive.c.o
+CMakeFiles/naive.dir/naive_bayes.c.o.provides.build: CMakeFiles/naive.dir/naive_bayes.c.o
 
 
 # Object files for target naive
@@ -158,7 +158,7 @@ naive_OBJECTS = \
 "CMakeFiles/naive.dir/main.c.o" \
 "CMakeFiles/naive.dir/jsonParser.c.o" \
 "CMakeFiles/naive.dir/cuisine.c.o" \
-"CMakeFiles/naive.dir/naive.c.o"
+"CMakeFiles/naive.dir/naive_bayes.c.o"
 
 # External object files for target naive
 naive_EXTERNAL_OBJECTS =
@@ -166,7 +166,7 @@ naive_EXTERNAL_OBJECTS =
 naive: CMakeFiles/naive.dir/main.c.o
 naive: CMakeFiles/naive.dir/jsonParser.c.o
 naive: CMakeFiles/naive.dir/cuisine.c.o
-naive: CMakeFiles/naive.dir/naive.c.o
+naive: CMakeFiles/naive.dir/naive_bayes.c.o
 naive: CMakeFiles/naive.dir/build.make
 naive: /lib/x86_64-linux-gnu/libjson.so.0
 naive: CMakeFiles/naive.dir/link.txt
@@ -181,7 +181,7 @@ CMakeFiles/naive.dir/build: naive
 CMakeFiles/naive.dir/requires: CMakeFiles/naive.dir/main.c.o.requires
 CMakeFiles/naive.dir/requires: CMakeFiles/naive.dir/jsonParser.c.o.requires
 CMakeFiles/naive.dir/requires: CMakeFiles/naive.dir/cuisine.c.o.requires
-CMakeFiles/naive.dir/requires: CMakeFiles/naive.dir/naive.c.o.requires
+CMakeFiles/naive.dir/requires: CMakeFiles/naive.dir/naive_bayes.c.o.requires
 
 .PHONY : CMakeFiles/naive.dir/requires
 

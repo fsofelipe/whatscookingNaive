@@ -33,8 +33,8 @@ cuisine.h
 /home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/main.c
 cuisine.h
 /home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cuisine.h
-naive.h
-/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/naive.h
+naive_bayes.h
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/naive_bayes.h
 main.h
 /home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/main.h
 
@@ -42,19 +42,17 @@ main.h
 stdio.h
 -
 
-/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/naive.c
-naive.h
-/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/naive.h
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/naive_bayes.c
+naive_bayes.h
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/naive_bayes.h
 
-/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/naive.h
-cuisine.h
-/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cuisine.h
-string.h
--
-stdlib.h
--
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/naive_bayes.h
 stdio.h
 -
+main.h
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/main.h
+cuisine.h
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cuisine.h
 math.h
 -
 float.h

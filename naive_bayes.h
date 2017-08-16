@@ -6,18 +6,43 @@
 #define WHATSCOOKINGNAIVE_NAIVE_BAYES_H
 #include <stdio.h>
 #include "main.h"
-#include "recipe.h"
+#include "cuisine.h"
+#include <math.h>
+#include <float.h>
+
+typedef struct ingredient{
+    char name[100];
+    int amount_yes;
+    int amount_no;
+    double p_x_c; // P(x|c)
+    double p_x; // P(x)
+}Ingredient;
+
+typedef struct list_of_ingredients{
+    Ingredient ** list;
+    int number_of_ingredients;
+    int total_ingredients;
+} List_Of_Ingredients;
 
 typedef struct likelihood_table{
-    Recipe * recipe;
-    int likelihood_yes;
-    int likelihood_no;
+    char name[100];
+    List_Of_Ingredients * ingredients;
+    int n_ing_yes;
+    int n_ing_no;
+    double p_c_y; // P(yes)
+    double p_c_n; // P(no)
+    int id;
 } Likelihood_Table;
 
 typedef struct list_likelihood_table{
     int count;
     Likelihood_Table ** list;
 } List_likelihood_table;
+
+typedef struct result{
+    char name[50];
+    int id;
+}result_t;
 
 //                                      Recipe
 //                                Yes            No
@@ -41,7 +66,15 @@ typedef struct list_likelihood_table{
 
 void train(List_Of_Recipes * recipes);
 
-Likelihood_Table * mount_tables(List_Of_Recipes * recipes);
-
+List_likelihood_table * mount_tables(List_Of_Recipes * recipes);
+List_Of_Ingredients * mount_ingredient_list(List_Of_Recipes * recipes);
+void print_list_of_ingredients(List_Of_Ingredients * ingredients);
+void print_ingredient(Ingredient * ingredient);
+void update_ingredients_on_table(recipe_t * recipe, List_Of_Ingredients * list);
+void print_tables(List_likelihood_table * tables, int withIngredients);
+void print_table(Likelihood_Table * table, int withIngredients);
+result_t ** calculate_probabilities(List_Of_Recipes * recipes, List_likelihood_table * tables);
 void print_likelihood_tables(List_likelihood_table * table);
+double get_ingredient_probability(Likelihood_Table * table, char * ingredient);
+void writeCSV(result_t **receipes, int number);
 #endif //WHATSCOOKINGNAIVE_NAIVE_BAYES_H

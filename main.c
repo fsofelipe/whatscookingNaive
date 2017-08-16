@@ -1,8 +1,8 @@
 #include "cuisine.h"
-#include "naive.h"
+#include "naive_bayes.h"
 #include "main.h"
 
-int main() {
+int main(){
 
     //List_Of_Recipes * train_dataset = read_file(1);
     //List_Of_Recipes * test_dataset = read_file(2);
@@ -10,8 +10,18 @@ int main() {
     List_Of_Recipes  test_dataset;
     read_file(1, &train_dataset);
     read_file(2, &test_dataset);
+    int number_of_results = 0;
 
-    int size_cuisines = 0;
+    List_likelihood_table * tables = mount_tables(&train_dataset);
+    result_t ** results = calculate_probabilities(&test_dataset, tables);
+    writeCSV(results, test_dataset.total_recipes);
+
+
+    //print_tables(tables, 0);
+
+
+
+    /*int size_cuisines = 0;
 
     cuisine_t *cuisines_list = getCuisines(&train_dataset, &size_cuisines);
 
@@ -34,7 +44,6 @@ int main() {
 
     result_t *a = (result_t *) malloc (sizeof(result_t) * test_dataset.total_recipes);
 
-    a = readAll(test_dataset, cuisines_list, size_cuisines);
+    a = readAll(test_dataset, cuisines_list, size_cuisines);*/
 
-    writeCSV(a, test_dataset.total_recipes);
 }
