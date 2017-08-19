@@ -1,0 +1,9 @@
+#!/bin/bash
+myvar="$PWD"
+
+make clear
+make run
+for ((n=0;n<25;n++)); do
+    ./runFile >> tempos.txt
+
+ done

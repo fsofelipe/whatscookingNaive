@@ -1,0 +1,3 @@
+gcc main.c naive.c cuisine.c jsonParser.c cronometro.c -o runFile -fopenmp -w -l json -I/usr/local/Cellar/json-c/0.12/include/json-c/ -lm
+./runFile
+makefile:6: recipe for target 'run' failed
