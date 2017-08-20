@@ -1,3 +1,3 @@
-/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cmake-build-debug/CMakeFiles/naive.dir
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/cmake-build-debug/CMakeFiles/naive.dir

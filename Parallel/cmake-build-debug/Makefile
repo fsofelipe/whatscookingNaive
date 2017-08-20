@@ -48,10 +48,10 @@ RM = /home/matheus/Desktop/Desenvolvimento/clion-2017.2/bin/cmake/bin/cmake -E r
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive
+CMAKE_SOURCE_DIR = /home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cmake-build-debug
+CMAKE_BINARY_DIR = /home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cmake-build-debug/CMakeFiles /home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/cmake-build-debug/CMakeFiles /home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -122,6 +122,33 @@ naive: cmake_check_build_system
 naive/fast:
 	$(MAKE) -f CMakeFiles/naive.dir/build.make CMakeFiles/naive.dir/build
 .PHONY : naive/fast
+
+cronometro.o: cronometro.c.o
+
+.PHONY : cronometro.o
+
+# target to build an object file
+cronometro.c.o:
+	$(MAKE) -f CMakeFiles/naive.dir/build.make CMakeFiles/naive.dir/cronometro.c.o
+.PHONY : cronometro.c.o
+
+cronometro.i: cronometro.c.i
+
+.PHONY : cronometro.i
+
+# target to preprocess a source file
+cronometro.c.i:
+	$(MAKE) -f CMakeFiles/naive.dir/build.make CMakeFiles/naive.dir/cronometro.c.i
+.PHONY : cronometro.c.i
+
+cronometro.s: cronometro.c.s
+
+.PHONY : cronometro.s
+
+# target to generate assembly for a file
+cronometro.c.s:
+	$(MAKE) -f CMakeFiles/naive.dir/build.make CMakeFiles/naive.dir/cronometro.c.s
+.PHONY : cronometro.c.s
 
 cuisine.o: cuisine.c.o
 
@@ -240,6 +267,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... naive"
+	@echo "... cronometro.o"
+	@echo "... cronometro.i"
+	@echo "... cronometro.s"
 	@echo "... cuisine.o"
 	@echo "... cuisine.i"
 	@echo "... cuisine.s"

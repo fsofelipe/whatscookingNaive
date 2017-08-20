@@ -3,6 +3,7 @@
 
 #include <json/json.h>
 #include <memory.h>
+#include <omp.h>
 
 typedef struct recipes{
   int id;

@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cmake-build-debug"/>
+				<Option working_dir="/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cmake-build-debug"/>
+				<Option working_dir="/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cmake-build-debug"/>
+				<Option working_dir="/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="naive">
-				<Option output="/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cmake-build-debug/naive" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cmake-build-debug"/>
+				<Option output="/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/naive" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -54,15 +54,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cmake-build-debug/Makefile&quot;  VERBOSE=1 naive"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/cmake-build-debug/Makefile&quot;  VERBOSE=1 naive"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="naive/fast">
-				<Option output="/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cmake-build-debug/naive" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cmake-build-debug"/>
+				<Option output="/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/naive" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -77,38 +77,44 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cmake-build-debug/Makefile&quot;  VERBOSE=1 naive/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/cmake-build-debug/Makefile&quot;  VERBOSE=1 naive/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cuisine.c">
+		<Unit filename="/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/cronometro.c">
 			<Option target="naive"/>
 		</Unit>
-		<Unit filename="/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cuisine.h">
+		<Unit filename="/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/cronometro.h">
 			<Option target="naive"/>
 		</Unit>
-		<Unit filename="/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/jsonParser.c">
+		<Unit filename="/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/cuisine.c">
 			<Option target="naive"/>
 		</Unit>
-		<Unit filename="/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/jsonParser.h">
+		<Unit filename="/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/cuisine.h">
 			<Option target="naive"/>
 		</Unit>
-		<Unit filename="/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/main.c">
+		<Unit filename="/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/jsonParser.c">
 			<Option target="naive"/>
 		</Unit>
-		<Unit filename="/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/main.h">
+		<Unit filename="/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/jsonParser.h">
 			<Option target="naive"/>
 		</Unit>
-		<Unit filename="/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/naive_bayes.c">
+		<Unit filename="/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/main.c">
 			<Option target="naive"/>
 		</Unit>
-		<Unit filename="/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/naive_bayes.h">
+		<Unit filename="/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/main.h">
 			<Option target="naive"/>
 		</Unit>
-		<Unit filename="/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/CMakeLists.txt">
+		<Unit filename="/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/naive_bayes.c">
+			<Option target="naive"/>
+		</Unit>
+		<Unit filename="/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/naive_bayes.h">
+			<Option target="naive"/>
+		</Unit>
+		<Unit filename="/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

@@ -19,88 +19,92 @@ cuisine_t *getCuisines(List_Of_Recipes *recipes, int *size){
     // k = all ingredients
     // l = distintic_ingredients list
     int i = 0, j = 0, k = 0, l = 0, aux = 99;
-    for (i = 0; i < recipes->total_recipes; i++){
-        aux =99;
-        char cuisine_name[50];
-        strcpy (cuisine_name, recipes->list[i]->cuisine);
-        //search if there is different type of cuisine
+    {
+        for (i = 0; i < recipes->total_recipes; i++) {
+            aux = 99;
+            char cuisine_name[50];
+            strcpy(cuisine_name, recipes->list[i]->cuisine);
+            //search if there is different type of cuisine
 
-        for (j = 0; j < *size; j++){
-            if (strcmp(cuisine_name, cuisines[j].name) == 0){
-                aux = j;
-                //break;
+            for (j = 0; j < *size; j++) {
+                if (strcmp(cuisine_name, cuisines[j].name) == 0) {
+                    aux = j;
+                    //break;
+                }
+
+            }
+            j = aux;
+
+            if (aux == 99) {
+                j = *size;
             }
 
-        }
-        j = aux;
+            if (j < *size) {
+                //cuisine already exist
+                cuisines[j].total++;
 
-        if (aux == 99){
-            j = *size;
-        }
+            } else {
+                //new cuisine
+                cuisines = (cuisine_t *) realloc(cuisines, (j + 1) * sizeof(cuisine_t));
+                strcpy(cuisines[j].name, recipes->list[i]->cuisine);
+                cuisines[j].total = 1;
+                *size = *size + 1;
+                cuisines[j].distintic_ingredients = 1;
+                cuisines[j].ingredient_list = (ingredient_t *) malloc(sizeof(ingredient_t) * 1);
+                if(cuisines[j].total_ingredients > 0){
+                    strcpy(cuisines[j].ingredient_list[0].name, "-");
+                    cuisines[j].ingredient_list[0].amount = 0;
+                }
+            }
+            //printf("%d\n", j);
+            //printf("cuisine type: %s\n", cuisines[j].name);
 
-        if (j < *size){
-            //cuisine already exist
-            cuisines[j].total++;
+            for (k = 0; k < recipes->list[i]->number_ingredients; k++) {
+                aux = 999999;
+                //printf("reading INGREDIENT: %s\n", recipes->list[i]->ingredients[k]);
+                for (l = 0; l < cuisines[j].distintic_ingredients; l++) {
 
-        }else{
-            //new cuisine
-            cuisines = (cuisine_t *) realloc (cuisines, (j+1) * sizeof(cuisine_t));
-            strcpy (cuisines[j].name, recipes->list[i]->cuisine);
-            cuisines[j].total = 1;
-            *size = *size + 1;
-            cuisines[j].distintic_ingredients = 1;
-            cuisines[j].ingredient_list = (ingredient_t *) malloc (sizeof(ingredient_t) * 1);
-            strcpy (cuisines[j].ingredient_list[0].name, "-");
-            cuisines[j].ingredient_list[0].amount = 0;
+                    //first ingredient
+                    if (strcmp(cuisines[j].ingredient_list[l].name, "-") == 0) {
+                        strcpy(cuisines[j].ingredient_list[l].name, recipes->list[i]->ingredients[k]);
+                        cuisines[j].ingredient_list[l].amount = 1;
+                        cuisines[j].total_ingredients = 1;
 
-        }
-        //printf("%d\n", j);
-        //printf("cuisine type: %s\n", cuisines[j].name);
+                    }
+                    if (strcmp(cuisines[j].ingredient_list[l].name, recipes->list[i]->ingredients[k]) == 0) {
+                        aux = l;
+                    }
 
-        for (k = 0; k < recipes->list[i]->number_ingredients; k++){
-            aux = 999999;
-            //printf("reading INGREDIENT: %s\n", recipes->list[i]->ingredients[k]);
-            for(l = 0; l < cuisines[j].distintic_ingredients;l++){
+                }
 
-                //first ingredient
-                if (strcmp(cuisines[j].ingredient_list[l].name, "-") == 0){
-                    strcpy (cuisines[j].ingredient_list[l].name, recipes->list[i]->ingredients[k]);
+                l = aux;
+                if (aux == 999999) {
+                    l = cuisines[j].distintic_ingredients;
+                }
+
+                if (l < cuisines[j].distintic_ingredients) {
+                    //ingredient already exist in this cuisine
+                    cuisines[j].ingredient_list[l].amount = cuisines[j].ingredient_list[l].amount + 1;
+                    cuisines[j].total_ingredients = cuisines[j].total_ingredients + 1;
+
+                } else {
+                    //new ingredient
+                    cuisines[j].distintic_ingredients = cuisines[j].distintic_ingredients + 1;
+                    cuisines[j].ingredient_list = (ingredient_t *) realloc(cuisines[j].ingredient_list,
+                                                                           (l + 1) * sizeof(ingredient_t));
+
+                    strcpy(cuisines[j].ingredient_list[l].name, recipes->list[i]->ingredients[k]);
                     cuisines[j].ingredient_list[l].amount = 1;
-                    cuisines[j].total_ingredients = 1;
-
-                }
-                if (strcmp(cuisines[j].ingredient_list[l].name, recipes->list[i]->ingredients[k]) == 0){
-                    aux = l;
+                    cuisines[j].total_ingredients = cuisines[j].total_ingredients + 1;
                 }
 
-            }
-            
-            l = aux;
-            if (aux == 999999){
-                l = cuisines[j].distintic_ingredients;
+
             }
 
-            if (l < cuisines[j].distintic_ingredients){
-                //ingredient already exist in this cuisine
-                cuisines[j].ingredient_list[l].amount = cuisines[j].ingredient_list[l].amount + 1;
-                cuisines[j].total_ingredients = cuisines[j].total_ingredients + 1;
-
-            }else{
-                //new ingredient
-                cuisines[j].distintic_ingredients = cuisines[j].distintic_ingredients + 1;
-                cuisines[j].ingredient_list = (ingredient_t *) realloc (cuisines[j].ingredient_list, (l+1) * sizeof(ingredient_t));
-
-                strcpy(cuisines[j].ingredient_list[l].name, recipes->list[i]->ingredients[k]);
-                cuisines[j].ingredient_list[l].amount = 1;
-                cuisines[j].total_ingredients = cuisines[j].total_ingredients + 1;
-            }
+            //printf("\n");
 
 
         }
-
-        //printf("\n");
-
-
     }
 
     return cuisines;

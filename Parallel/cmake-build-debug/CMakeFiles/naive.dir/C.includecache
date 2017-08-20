@@ -6,53 +6,67 @@
 
 #IncludeRegexTransform: 
 
-/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cuisine.c
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/cronometro.c
+cronometro.h
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/cronometro.h
+time.h
+-
+
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/cronometro.h
+
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/cuisine.c
 cuisine.h
-/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cuisine.h
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/cuisine.h
 stdio.h
 -
 jsonParser.h
-/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/jsonParser.h
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/jsonParser.h
 
-/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cuisine.h
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/cuisine.h
 json/json.h
 -
 memory.h
 -
+omp.h
+-
 
-/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/jsonParser.c
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/jsonParser.c
 jsonParser.h
-/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/jsonParser.h
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/jsonParser.h
 
-/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/jsonParser.h
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/jsonParser.h
 json/json_object.h
 -
 cuisine.h
-/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cuisine.h
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/cuisine.h
 
-/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/main.c
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/main.c
 cuisine.h
-/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cuisine.h
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/cuisine.h
 naive_bayes.h
-/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/naive_bayes.h
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/naive_bayes.h
 main.h
-/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/main.h
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/main.h
+cronometro.h
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/cronometro.h
+omp.h
+-
 
-/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/main.h
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/main.h
 stdio.h
 -
 
-/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/naive_bayes.c
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/naive_bayes.c
 naive_bayes.h
-/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/naive_bayes.h
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/naive_bayes.h
 
-/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/naive_bayes.h
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/naive_bayes.h
 stdio.h
 -
 main.h
-/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/main.h
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/main.h
 cuisine.h
-/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/cuisine.h
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/cuisine.h
 math.h
 -
 float.h
