@@ -9,7 +9,7 @@ endif()
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel")
 
-set(SOURCE_FILES main.c jsonParser.c cuisine.c naive_bayes.c cronometro.c)
+set(SOURCE_FILES main.c jsonParser.c cuisine.c naive_bayes.c cronometro.c hash_table.c)
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -l json ")
 
 add_executable(naive ${SOURCE_FILES})

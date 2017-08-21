@@ -177,6 +177,33 @@ cuisine.c.s:
 	$(MAKE) -f CMakeFiles/naive.dir/build.make CMakeFiles/naive.dir/cuisine.c.s
 .PHONY : cuisine.c.s
 
+hash_table.o: hash_table.c.o
+
+.PHONY : hash_table.o
+
+# target to build an object file
+hash_table.c.o:
+	$(MAKE) -f CMakeFiles/naive.dir/build.make CMakeFiles/naive.dir/hash_table.c.o
+.PHONY : hash_table.c.o
+
+hash_table.i: hash_table.c.i
+
+.PHONY : hash_table.i
+
+# target to preprocess a source file
+hash_table.c.i:
+	$(MAKE) -f CMakeFiles/naive.dir/build.make CMakeFiles/naive.dir/hash_table.c.i
+.PHONY : hash_table.c.i
+
+hash_table.s: hash_table.c.s
+
+.PHONY : hash_table.s
+
+# target to generate assembly for a file
+hash_table.c.s:
+	$(MAKE) -f CMakeFiles/naive.dir/build.make CMakeFiles/naive.dir/hash_table.c.s
+.PHONY : hash_table.c.s
+
 jsonParser.o: jsonParser.c.o
 
 .PHONY : jsonParser.o
@@ -273,6 +300,9 @@ help:
 	@echo "... cuisine.o"
 	@echo "... cuisine.i"
 	@echo "... cuisine.s"
+	@echo "... hash_table.o"
+	@echo "... hash_table.i"
+	@echo "... hash_table.s"
 	@echo "... jsonParser.o"
 	@echo "... jsonParser.i"
 	@echo "... jsonParser.s"

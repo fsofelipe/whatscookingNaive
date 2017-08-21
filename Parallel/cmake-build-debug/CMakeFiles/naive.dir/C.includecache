@@ -30,6 +30,14 @@ memory.h
 omp.h
 -
 
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/hash_table.c
+hash_table.h
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/hash_table.h
+
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/hash_table.h
+naive_bayes.h
+/home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/naive_bayes.h
+
 /home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/jsonParser.c
 jsonParser.h
 /home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/jsonParser.h

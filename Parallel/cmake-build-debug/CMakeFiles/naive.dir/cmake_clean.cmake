@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/naive.dir/cuisine.c.o"
   "CMakeFiles/naive.dir/naive_bayes.c.o"
   "CMakeFiles/naive.dir/cronometro.c.o"
+  "CMakeFiles/naive.dir/hash_table.c.o"
   "../naive.pdb"
   "../naive"
 )

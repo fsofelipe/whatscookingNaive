@@ -8,6 +8,12 @@ CMakeFiles/naive.dir/cuisine.c.o
  /home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/cuisine.c
  /home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/cuisine.h
  /home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/jsonParser.h
+CMakeFiles/naive.dir/hash_table.c.o
+ /home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/cuisine.h
+ /home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/hash_table.c
+ /home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/hash_table.h
+ /home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/main.h
+ /home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/naive_bayes.h
 CMakeFiles/naive.dir/jsonParser.c.o
  /home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/cuisine.h
  /home/matheus/Desktop/Faculdade/IPPD/whatscookingNaive/Parallel/jsonParser.c

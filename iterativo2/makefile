@@ -1,0 +1,13 @@
+CC=gcc
+
+CFLAGS= -fopenmp -w -l json -I/usr/local/Cellar/json-c/0.12/include/json-c/ -lm
+
+run:
+	$(CC) main.c naive_bayes.c cuisine.c jsonParser.c cronometro.c -o runFile $(CFLAGS)
+
+
+clear:
+	rm -f runFile
+	rm -f *.o
+	rm -f *.csv
+	clear

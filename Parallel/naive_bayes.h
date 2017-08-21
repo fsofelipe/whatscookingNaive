@@ -9,7 +9,9 @@
 #include "cuisine.h"
 #include <math.h>
 #include <float.h>
+
 #define THREADS 4
+
 
 typedef struct ingredient{
     char name[100];
@@ -17,6 +19,7 @@ typedef struct ingredient{
     int amount_no;
     double p_x_c; // P(x|c)
     double p_x; // P(x)
+    struct ingredient * next;
 }Ingredient;
 
 typedef struct list_of_ingredients{
@@ -80,4 +83,5 @@ double get_ingredient_probability(Likelihood_Table * table, char * ingredient);
 void writeCSV(result_t **receipes, int number);
 void calculate_ingredient_probability(Ingredient * ingredient, double p_c_y);
 int found_ingredient_by_name(char * name, List_Of_Ingredients * ingredients);
+double calculate_table_probability(Likelihood_Table * table, recipe_t * recipe);
 #endif //WHATSCOOKINGNAIVE_NAIVE_BAYES_H
